@@ -483,6 +483,47 @@ html {
   }
 }
 
+/*     hamburger menu css */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #CF0F47;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    z-index: 999;
+  }
+
+  .nav {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    display: none;
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav a, .nav .dropdown {
+    margin: 10px 0;
+  }
+}
+
   </style>
 </head>
 
@@ -492,7 +533,8 @@ html {
       <img src="https://i.ibb.co/pr278jXK/no-bg-small-logo.png" alt="Cosmic Impex Enterprises Logo" itemprop="logo">
       <div class="former-name">Formerly known as LEAP IMPEX LLP</div>
     </div>
-    
+<!--     hamburger mennu html -->
+    <button class="hamburger" id="hamburger">&#9776;</button>
     <nav class="nav">
       <a href="#why-cosmic">Why Cosmic?</a>
       <a href="#solutions">Solutions</a>
@@ -771,6 +813,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+// hamburger menu setting
+    document.getElementById('hamburger').addEventListener('click', function () {
+  document.querySelector('.nav').classList.toggle('active');
+});
+
   </script>
 
   <div id="welcome-dialog" class="welcome-dialog">
