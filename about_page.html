@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Cosmic Impex Enterprises | Adhesive Tape Specialists</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #e31937;
+            --light: #f5f5f5;
+            --dark: #333333;
+            --gray: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* added form Home page */
+          header {
+      background: #FFFFFF;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      z-index: 10;
+      position: relative;
+    }
+         .logo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.former-name {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    align-items: center;
+  }
+  .former-name {
+    font-size: 0.6rem;
+    text-align: center;
+  }
+}
+    .logo img {
+      height: 80px;
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: slideInLogo 1s ease-out forwards;
+    }
+    @keyframes slideInLogo {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    
+
+
+    .nav {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .nav-indicator {
+      position: absolute;
+      bottom: 0;
+      height: 3px;
+      background: #CF0F47;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+      transform: translateX(0);
+      width: 0;
+    }
+    nav a, nav .dropdown {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-size: 20px;
+      position: relative;
+    }
+    nav a:hover {
+      color: #CF0F47;
+    }
+    nav .dropdown a#product-button {
+      cursor: pointer;
+    }
+    nav .dropdown-content a {
+      font-size: 18px;
+      padding: 12px 16px;
+      display: block;
+      color: #333;
+      text-decoration: none;
+    }
+    nav .dropdown-content a:hover {
+      background-color: #f1f1f1;
+      color: #CF0F47;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      z-index: 1000;
+    }
+
+    /* Hamburger menu css */
+    .hamburger {
+        display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #CF0F47;
+  cursor: pointer;
+}
+
+
+  @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    z-index: 999;
+  }
+
+  .nav {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    display: none;
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav a, .nav .dropdown {
+    margin: 10px 0;
+  }
+}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Content Sections */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-dark {
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-content {
+            padding: 30px;
+        }
+        
+        .card-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-item h3 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .stat-item p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            padding: 80px 0;
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--secondary);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header  itemscope itemtype="https://schema.org/Organization">
+        
+    <a href="index.html" class="logo" style="text-decoration:none;">
+  <img src="https://i.ibb.co/pr278jXK/no-bg-small-logo.png" alt="Cosmic Impex Enterprises Logo" itemprop="logo">
+  <div class="former-name">Formerly known as LEAP IMPEX LLP</div>
+</a>
+    
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <nav class="nav">
+        <a href="about_page.html">About Us</a>
+      <a href="index.html#why-cosmic">Why Cosmic?</a>
+      <a href="index.html#solutions">Solutions</a>
+      <div class="dropdown">
+        <a href="#products" id="product-button">Products ▾</a>
+        <div class="dropdown-content" id="product-dropdown">
+          <a href="adhesive-tapes.html">Adhesive Tapes</a>  
+          <!-- <a href="Automation.html">Automation</a>
+          <a href="Instrumentation.html">Instrumentation</a>
+          <a href="electrical.html">Electrical</a>
+          <a href="civil.html">Civil</a> -->
+        </div>
+      </div>
+      <a href="index.html#contact">Contact Us</a>
+      <div class="nav-indicator"></div>
+    </nav>
+  </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>About Cosmic Impex Enterprises</h1>
+            <p>Leaders in adhesive tape solutions, serving industries worldwide with innovative and customized products</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Story</h2>
+                <p>Established in 2014 in Nagpur, Maharshtra, India, Cosmic Impex Enterprises has grown from a local supplier to an international provider of high-quality adhesive solutions.</p>
+            </div>
+            <div class="content-grid">
+                <div class="card">
+                    <div class="card-img" style= "background-image:url(business-strategy-success-target-goals.jpg);"></div>
+                    <div class="card-content">
+                        <h3>Our Mission</h3>
+                        <p>To deliver top-notch adhesive tape products that meet international quality standards while providing customized, cost-effective solutions tailored to our clients' requirements.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="card-content">
+                        <h3>Our Vision</h3>
+                        <p>To excel as a respected leader in the adhesive tape industry by offering innovative, durable, and high-performance solutions across global markets.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="card-content">
+                        <h3>Our Approach</h3>
+                        <p>We combine technical expertise with customer-focused service to develop solutions that precisely match our clients' specifications and applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>20+</h3>
+                    <p>Countries Served</p>
+                </div>
+                <div class="stat-item">
+                    <h3>13+</h3>
+                    <p>Specialized Products</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2014</h3>
+                    <p>Year Established</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Client Satisfaction Focus</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+<!-- Industries Section -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-title">
+            <h2>Industries We Serve</h2>
+            <p>Our adhesive solutions power diverse industries with specialized products for unique applications</p>
+        </div>
+        <div class="content-grid">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Automotive & Locomotives</h3>
+                    <p>High-performance tapes for assembly, masking, and insulation applications in vehicle manufacturing.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Electrical & Electronics</h3>
+                    <p>Specialized insulation and mounting solutions for sensitive electronic components.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Renewable Energy & Solar</h3>
+                    <p>Durable adhesive solutions for solar panel installation and maintenance.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Food Industry</h3>
+                    <p>Food-safe adhesive tapes for packaging, processing equipment, and hygiene-sensitive applications.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Pharmaceutical</h3>
+                    <p>FDA-compliant tapes for medical packaging, device assembly, and cleanroom applications.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Furniture, Retail & Construction</h3>
+                    <p>Strong bonding tapes for furniture assembly, retail displays, and construction applications.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Sports and Fitness</h3>
+                    <p>Durable tapes for sports equipment manufacturing and fitness gear assembly.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Textiles and Leather</h3>
+                    <p>Specialized adhesives for fabric bonding and leather goods manufacturing.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Packaging</h3>
+                    <p>High-strength sealing and bundling solutions for industrial packaging.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Find Your Perfect Adhesive Solution?</h2>
+            <p>Our team of experts is ready to help you select or develop the ideal adhesive product for your specific needs.</p>
+            <a href="index.html#contact" class="btn">Contact Our Team</a>
+        </div>
+    </section>
+    <script>
+         const productButton = document.getElementById('product-button');
+    const productDropdown = document.getElementById('product-dropdown');
+
+    if (productButton && productDropdown) {
+      productButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        productDropdown.style.display = (productDropdown.style.display === 'block') ? 'none' : 'block';
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!productButton.contains(e.target) && !productDropdown.contains(e.target)) {
+          productDropdown.style.display = 'none';
+        }
+      });
+
+      const indicator = document.querySelector('.nav-indicator');
+      const nav = document.querySelector('.nav');
+      const navLinks = nav.querySelectorAll('a:not(#product-button)');
+
+      navLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+          const linkRect = link.getBoundingClientRect();
+          const navRect = nav.getBoundingClientRect();
+          indicator.style.width = `${linkRect.width}px`;
+          indicator.style.left = `${linkRect.left - navRect.left}px`;
+        });
+      });
+
+      nav.addEventListener('mouseleave', () => {
+        indicator.style.width = '0';
+      });
+        document.getElementById('hamburger').addEventListener('click', function () {
+  document.querySelector('.nav').classList.toggle('active');
+});
+    }
+    </script>
+</body>
+</html>
